@@ -15,7 +15,7 @@ public class HourGlass {
                 arr[arr_i][arr_j] = in.nextInt();
             }
         }
-        
+        in.close();
         int largestMaximumSum = -9999;
         for( int i =0 ;i <4 ; i++){
         	for( int j =0 ;j <4 ; j++){
@@ -38,10 +38,10 @@ public class HourGlass {
 	        	if(sum> largestMaximumSum){
 	        		largestMaximumSum = sum;
 	        	}
-	        	System.out.println("sum :"+ sum);
+	        	//System.out.println("sum :"+ sum);
         	}
         }
-        System.out.println("largestMaximumSum :"+ largestMaximumSum);
+        //System.out.println("largestMaximumSum :"+ largestMaximumSum);
         System.out.println(largestMaximumSum);
     }
 	
