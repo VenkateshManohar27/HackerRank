@@ -3,16 +3,24 @@ package com.vm.sortingalgorithms;
 /**
  * Selection Sort Pseudo Code
  * 
- * SelectionSort(A,n){ TIME COMPLEXITY for i = 0 to n-2 { iMin = i;
- * -------------------------- n-1 *c1 for j=i+1 to n-1 { if(A[j] < A[iMin]){
- * ---- (n-1)+(n-2)+(n-3)+...+1 = n(n-1)/2 iMin = j; } swap A[i] and A[iMin]
- * --------- n-1*c2 } } }
+ * SelectionSort(A,n){ 
+ * TIME COMPLEXITY 
+ * for i = 0 to n-2 { 
+ * 	iMin = i;  -------------------------- n-1 *c1 
+ * 	for j=i+1 to n-1 { 
+ * 		if(A[j] < A[iMin]){ ---- (n-1)+(n-2)+(n-3)+...+1 = n(n-1)/2 
+ * 		iMin = j; 
+ * 	} 
+ * 	swap A[i] and A[iMin] --------- n-1*c2 
+ * 	} 
+ * } 
+ * }
  * 
  * equation will be like a2n+bn+c
  * 
  * Time Complexity = O(n^2) Slow algorithm
  * 
- * @author 212342800
+ * @author Venkatesh Manohar
  *
  */
 public class SelectionSort {

@@ -3,61 +3,37 @@ package com.vm.sortingalgorithms;
 import com.vm.utility.ArrayUtility;
 import com.vm.utility.PerformanceLogging;
 
-/**
- * BubbleSort PseudoCode
+/**INSERTION SORT 
  * 
- * BubbleSort(A, n)						TIME COMPLEXITY
- * for k=0 to n-1 {
- * 		for i=0 to n-2 {
- * 			if(A[i]>A[i+1]){           --------- } c1*n-1*n-1 = cn^2-cn-1 =  O(n^2)
- * 				swap(A[i], A[i+1])     ========= }         
- * 			}
- * 		}
- * }
- * Slow algorithm
+ * PseudoCode
+ * Insertion Sort(A, n)								TIME COMPLEXITY
  * 
- * Can be improved by not considering already sorted part
- * BubbleSort(A, n)						TIME COMPLEXITY
- * for k=0 to n-1 {
- * 		for i=0 to n-k-1 {
- * 			if(A[i]>A[i+1]){           --------- } c1*n-1*n-1 = cn^2-cn-1 =  O(n^2)
- * 				swap(A[i], A[i+1])     ========= }         
- * 			}
- * 		}
- * }
+ *  for i=1 to n-1 				---------------				
+ * 		hole = i;				--------------			}
+ * 		value = A[i]				----------			} c1
+ * 		while( hole>0 && A[hole -1] >value){		}	best case array is sorted so contents 
+ * 														in while wont be executed
+ * 														 in that case (c1+c3)*(n-1)	= 	O(n)
+ * 			A[hole] = A[hole-1];			} c2		}	
+ * 			hole --;						} 		}	worst  case- reverse sorted array -
+ * 													} 	(c1+c3)*(n-1)
+ * 		}												1+2+3+...+n-1 = n(n-1)/2 * c2 = an^2+bn+c = O(n^2) 
+ * 		A[hole] = value;					}c3
+ * 	}
  * 
- * * Can be improved further by not looping if the list is already sorted
- * BubbleSort(A, n)						TIME COMPLEXITY
- * for k=0 to n-1 {
- * 		boolean flag = true;
- * 		for i=0 to n-k-1 {
- * 			if(A[i]>A[i+1]){           --------- } c1*n-1*n-1 = cn^2-cn-1 =  O(n^2)
- * 				swap(A[i], A[i+1])     ========= }
- * 				flag = false         
- * 			}
- * 		}
- * 		if(flag) break;								Best case O(n) if array already sorted
- * 
- * }
- * Average case and worst case O(n^2)
- * Average case is if half of the list is already sorted
  * @author Venkatesh Manohar
  *
  */
-public class BubbleSort {
+public class InsertionSort {
 	public static int[] sort(int[] A, int length) {
-		for (int i = 0; i < A.length ; i++) {
-			boolean flag = true;
-			for (int j = 0; j < A.length-i-1; j++) {
-				if(A[j]>A[j+1]){
-					int temp = A[j];
-					A[j] = A[j+1];
-					A[j+1] = temp;
-					flag = false;
-				}
-				
+		for (int i = 1; i < A.length; i++) {
+			int value = A[i];
+			int hole = i;
+			while (hole > 0 && A[hole-1] > value) {
+				A[hole] = A[hole - 1];
+				hole--;
 			}
-			if(flag) break;
+			A[hole] = value;
 		}
 
 		return A;
@@ -120,4 +96,6 @@ public class BubbleSort {
 		ArrayUtility.print(A);
 		System.out.println("Time Taken = " + estimatedTime);*/
 	}
+	
+
 }
