@@ -5,13 +5,10 @@ import java.util.Scanner;
 class Printer<T> {
 
 	public void printArray(T[] intArray) {
-
 		for (T t : intArray) {
 			System.out.println(t);
 		}
-
 	}
-
 }
 
 public class Generics {
