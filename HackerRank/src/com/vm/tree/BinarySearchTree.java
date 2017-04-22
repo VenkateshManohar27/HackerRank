@@ -67,7 +67,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	public static void preorder(Node node) {
 		Node current = node;
 		if (current != null) {
-			System.out.println(node.getData());
+			System.out.print(node.getData()+" ");
 			preorder(node.getLeft());
 			preorder(node.getRight());
 		}
@@ -77,7 +77,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		Node current = node;
 		if (current != null) {
 			inorder(node.getLeft());
-			System.out.println(node.getData());
+			System.out.print(node.getData()+" ");
 			inorder(node.getRight());
 		}
 	}
@@ -87,7 +87,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		if (current != null) {
 			postorder(node.getLeft());
 			postorder(node.getRight());
-			System.out.println(node.getData());
+			System.out.print(node.getData()+" ");
 
 		}
 	}
@@ -99,7 +99,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
 			while (!queue.isEmpty()) {
 				Node tree = (Node) queue.remove();
-				System.out.println(tree.getData());
+				System.out.print(tree.getData()+" ");
 				if (tree.getLeft() != null) {
 					queue.add(tree.getLeft());
 				}
@@ -156,10 +156,13 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		bst.insert(8);
 		System.out.println("Pre Order:");
 		preorder(bst.root);
+		System.out.println();
 		System.out.println("In Order:");
 		inorder(bst.root);
+		System.out.println();
 		System.out.println("Post Order:");
 		postorder(bst.root);
+		System.out.println();
 		System.out.println("Height:" + height(bst.root));
 		System.out.println("SIZE:" + size(bst.root));
 
@@ -175,13 +178,16 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
 		System.out.println("Pre Order:");
 		preorder(bst.root);
+		System.out.println();
 		System.out.println("In Order:");
 		inorder(bst.root);
+		System.out.println();
 		System.out.println("Post Order:");
 		postorder(bst.root);
+		System.out.println();
 		System.out.println("Level Order:");
 		levelOrder(bst.root);
-
+		System.out.println();
 		System.out.println("Height:" + height(bst.root));
 		
 		System.out.println("SIZE:" + size(bst.root));
