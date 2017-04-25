@@ -1,6 +1,7 @@
 package com.vm.graphalgorithms;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,6 +86,11 @@ public class Graph<T> {
         graph.addEdge(3, 8);
         graph.addEdge(8, 11);
         System.out.println(graph);
+	}
+
+
+	public Collection<Vertex<T>> getAllVertices() {
+		return allVertices.values();
 	}
 	
 }
